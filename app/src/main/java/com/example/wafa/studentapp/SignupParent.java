@@ -34,7 +34,6 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
     DatabaseReference ref;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,14 +67,23 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
         final String password = studentPassword.getText().toString().trim();
         final String phone = studentPhone.getText().toString().trim();
 
-        final Parent parent= new Parent(name,email,password,phone ,username);
-        final Student student = new Student(name,email,password,phone ,username);
+       // final Parent parent= new Parent(name,email,password,phone ,username);
+        //final Student student = new Student(name,email,password,phone ,username);
 
+       // Query usernameQuery  = FirebaseDatabase.getInstance().getReference().child("Parents").equalTo(username);
+        //Query std = FirebaseDatabase.getInstance().getReference().child("Student").equalTo(username);
+
+
+/**
 
         if(parent.getUsername().equals(student.getUsername()))
         {
             Toast.makeText(getApplicationContext(), " done ", Toast.LENGTH_SHORT).show();
+
+
         }
+
+      
 
         if(!parent.getUsername().equals(student.getUsername())) {
 
@@ -85,7 +93,7 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-
+**/
         if(name.isEmpty()){
             studentName.setError(" invalid name");
             studentName.requestFocus();
@@ -132,9 +140,13 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
         }
 
 
+
+
+
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         ref= firebaseDatabase.getReference().child("Parents");
+
 
 
 
@@ -149,12 +161,14 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
 
                     FirebaseDatabase.getInstance().getReference("Parents").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(parent).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(getApplicationContext()," Parent signup successflly" , Toast.LENGTH_SHORT).show();
                                 finish();
-                                Intent i = new Intent(getApplicationContext() , StudentHome.class);
+                                Intent i = new Intent(getApplicationContext() , ParentInfo.class);
                                 startActivity(i);
 
                             }

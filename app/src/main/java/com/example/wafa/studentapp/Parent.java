@@ -5,6 +5,8 @@ public class Parent {
     public String name,email , password , phone , username;
 
     public Parent(String name, String email, String password, String phone, String username){
+
+
         this.name= name;
         this.email= email;
         this.password= password;
@@ -21,7 +23,14 @@ public class Parent {
         this.phone= phone;
 
     }
+
+
+
     public  Parent(){}
+
+
+
+
 
     public String getName() {
         return name;

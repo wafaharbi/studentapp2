@@ -1,5 +1,6 @@
 package com.example.wafa.studentapp;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,6 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,6 +30,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginStudent extends AppCompatActivity {
 
@@ -108,6 +118,7 @@ public class LoginStudent extends AppCompatActivity {
             studentPassword.requestFocus();
             return;
         }
+
 /**
 
     ref.child(username).addValueEventListener(new ValueEventListener() {
@@ -144,8 +155,9 @@ public class LoginStudent extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(), " user login ", Toast.LENGTH_SHORT).show();
                         finish();
-                        Intent i = new Intent(getApplicationContext(), StudentHome.class);
+                      Intent i = new Intent(getApplicationContext(), StudentHome.class);
                         startActivity(i);
+                        //startActivity(new Intent(LoginStudent.this, users.class));
 
                     }
                     else {

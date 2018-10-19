@@ -3,7 +3,7 @@ package com.example.wafa.studentapp;
 public class Student {
 
 
-    public String name,email , password , phone , username;
+    public String name ,email , password , phone , username;
 
     public Student(String name, String email, String password, String phone ,String username){
         this.name= name;
@@ -78,3 +78,5 @@ public class Student {
 
 
 }
+
+
