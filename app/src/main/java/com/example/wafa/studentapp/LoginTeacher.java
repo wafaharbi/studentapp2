@@ -97,7 +97,7 @@ public class LoginTeacher extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), " user login ", Toast.LENGTH_SHORT).show();
                     finish();
-                    Intent i = new Intent(getApplicationContext(), TeacherInfo.class);
+                    Intent i = new Intent(getApplicationContext(), TeacherProfile.class);
                     startActivity(i);
 
                 }

@@ -109,7 +109,7 @@ public class LoginParent extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), " user login ", Toast.LENGTH_SHORT).show();
                     finish();
-                    Intent i = new Intent(getApplicationContext(), ParentInfo.class);
+                    Intent i = new Intent(getApplicationContext(), ParentProfile.class);
                     startActivity(i);
 
                 }

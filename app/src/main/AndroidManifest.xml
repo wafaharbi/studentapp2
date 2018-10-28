@@ -31,6 +31,18 @@
         <activity android:name=".TeacherInfo" />
         <activity android:name=".TeacherUpdate" />
         <activity android:name=".ParentUpadate" />
+        <activity android:name=".ParentProfile" />
+        <activity android:name=".ParentChatTeacher" />
+        <activity android:name=".test" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".TeachersChatParents" />
+        <activity android:name=".TeacherProfile" />
+        <activity android:name=".MessageTeacher" />
+        <activity android:name=".TeachersChatStudents" />
+        <activity android:name=".MessageTeacherStudent" />
+        <activity android:name=".StudentChatTeacher" />
+        <activity android:name=".MessageStudentTeacher"></activity>
     </application>
 
 </manifest>

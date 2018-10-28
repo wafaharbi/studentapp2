@@ -2,7 +2,7 @@ package com.example.wafa.studentapp;
 
 public class Parent {
 
-    public String name,email , password , phone , username;
+    public String name,email , password , phone , username , id;
 
     public Parent(String name, String email, String password, String phone, String username){
 

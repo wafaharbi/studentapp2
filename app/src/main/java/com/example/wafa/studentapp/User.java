@@ -1,12 +1,14 @@
 package com.example.wafa.studentapp;
 
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class User {
 
-    FirebaseUser firebaseUser;
-    public String name,email , password , phone , username ;
+
+
+    public String name,email , password , phone , username, id;
 
     public User(String name,String username, String email, String password, String phone){
         this.name= name;
@@ -35,6 +37,7 @@ public class User {
     public User(){
 
     }
+
 
 
 
@@ -83,5 +86,16 @@ public class User {
         return phone;
     }
 
+/*
+    public String getId() {
 
+
+        id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    */
 }

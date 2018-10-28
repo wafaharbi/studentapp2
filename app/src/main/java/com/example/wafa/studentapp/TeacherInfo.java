@@ -42,6 +42,7 @@ public class TeacherInfo extends AppCompatActivity {
 
         auth =FirebaseAuth.getInstance();
         u = auth.getCurrentUser();
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Teachers").child(u.getUid());
         FirebaseUser studentuser = auth.getCurrentUser();
 
@@ -57,6 +58,7 @@ public class TeacherInfo extends AppCompatActivity {
                 }
             }
         };
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
