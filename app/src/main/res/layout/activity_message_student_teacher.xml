@@ -44,13 +44,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="18dp"
-            android:layout_marginLeft="30dp"
             android:text="userName"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+
 
 
     </android.support.v7.widget.Toolbar>
@@ -91,5 +93,7 @@
             />
 
     </RelativeLayout>
+
+
 
 </RelativeLayout>

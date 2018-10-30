@@ -38,6 +38,8 @@ import com.google.firebase.internal.InternalTokenResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+
 public class SignupStudent extends AppCompatActivity implements View.OnClickListener{
 
      EditText studentName , studentEmail , studentPassword , studentPhone , studentUsername;
@@ -76,7 +78,20 @@ public class SignupStudent extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    /*
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        status("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        status("offline");
+    }
+*/
     public void register(){
 
         final String name =  studentName.getText().toString().trim();
@@ -84,6 +99,9 @@ public class SignupStudent extends AppCompatActivity implements View.OnClickList
         final String email = studentEmail.getText().toString().trim();
         final String password = studentPassword.getText().toString().trim();
         final String phone = studentPhone.getText().toString().trim();
+        final String img = "default";
+        final  String thumb_img = "default";
+        final String status ;
 
 
 
@@ -139,7 +157,7 @@ public class SignupStudent extends AppCompatActivity implements View.OnClickList
 
 
 
-        final Student student= new Student(name ,email,password,phone,username);
+        final Student student= new Student(name ,email,password,phone,username , img, thumb_img);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -179,7 +197,7 @@ public class SignupStudent extends AppCompatActivity implements View.OnClickList
 
                         if(task.isSuccessful()){
 
-                            Student student= new Student(name ,email,password,phone,username);
+                            Student student= new Student(name ,email,password,phone,username ,img , thumb_img ) ;
 
                             ref= firebaseDatabase.getReference().child("Student");
 
@@ -231,6 +249,16 @@ public class SignupStudent extends AppCompatActivity implements View.OnClickList
 
 
      }
+/*
+     public void status( String status){
+
+      ref = FirebaseDatabase.getInstance().getReference().child("Student").child(firebaseUser.getUid());
+         HashMap<String , Object> hashMap = new HashMap<>();
+         hashMap.put("status", status);
+         ref.updateChildren(hashMap);
+
+     }
+*/
 
 
     @Override

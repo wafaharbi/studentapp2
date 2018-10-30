@@ -37,7 +37,13 @@ public class StudentHome extends AppCompatActivity {
         startActivity(i);
     }
 
+    public  void listchat(View v) {
 
+
+
+        Intent i = new Intent(this, listStudentChat.class);
+        startActivity(i);
+    }
 
 
 }

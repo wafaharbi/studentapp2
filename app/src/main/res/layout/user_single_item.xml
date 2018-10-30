@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_single_img"
@@ -17,10 +18,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/user_single_img"
         android:layout_marginStart="113dp"
-        android:layout_marginTop="37dp"
         android:text="Display Name"
         android:textColor="@android:color/background_dark"
         android:textSize="18dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_on"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/user_single_name"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/user_single_img"
+        android:layout_toRightOf="@+id/user_single_img"
+        android:src="@drawable/default_img"
+        android:visibility="gone"
+        app:civ_border_color="#05df29"
+        app:civ_border_width="10dp"
+        />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_off"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/user_single_name"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/user_single_img"
+        android:layout_toRightOf="@+id/user_single_img"
+        android:src="@drawable/default_img"
+        android:visibility="gone"
+        app:civ_border_color="#FFD61C1C"
+        app:civ_border_width="10dp"
+        />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="53dp"
+        android:text="date" />
+
+
+
+
 </RelativeLayout>

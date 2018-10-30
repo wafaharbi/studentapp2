@@ -1,5 +1,6 @@
 package com.example.wafa.studentapp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -28,10 +30,10 @@ public class MessageStudentTeacher extends AppCompatActivity {
 
 
     TextView id , nameofuser;
-    ImageButton sendbtn;
+    ImageButton sendbtn ;
     EditText sendtxt;
     FirebaseUser fuser;
-    DatabaseReference reference , currentUser;
+    DatabaseReference reference , currentUser ;
     Toolbar toolbar;
     UserAdapter userAdapter;
     List<Chat> mChat;
@@ -43,6 +45,8 @@ public class MessageStudentTeacher extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_student_teacher);
+
+
         recyclerView = (RecyclerView) findViewById(R.id.recycle_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager= new LinearLayoutManager(getApplicationContext());
@@ -51,7 +55,11 @@ public class MessageStudentTeacher extends AppCompatActivity {
 
         final String user_id=   getIntent().getStringExtra("user_id");
 
+
+
+
         reference = FirebaseDatabase.getInstance().getReference().child("Teachers").child(user_id);
+
         id =(TextView) findViewById(R.id.nameuser);
         nameofuser = (TextView) findViewById(R.id.name);
         sendbtn  =(ImageButton) findViewById(R.id.btn_send);
@@ -61,10 +69,14 @@ public class MessageStudentTeacher extends AppCompatActivity {
         id.setText(user_id);
 
 
+
         sendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String message= sendtxt.getText().toString();
+
+
+
                 if(!message.equals("")){
                     sendMessage(fuser.getUid(),user_id , message);
                 }
@@ -119,6 +131,8 @@ public class MessageStudentTeacher extends AppCompatActivity {
         hashMap.put("sender", sender);
         hashMap.put("reciver", reciver);
         hashMap.put("message", msg);
+        hashMap.put("time" , ServerValue.TIMESTAMP);
+
 
         ref.child("Chats").push().setValue(hashMap);
     }
@@ -143,11 +157,15 @@ public class MessageStudentTeacher extends AppCompatActivity {
                     if(chat.getReciver().toString().equals(myid) && chat.getSender().toString().equals(userid)||
                             chat.getReciver().toString().equals(userid) && chat.getSender().toString().equals(myid)){
 
+
                         mChat.add(chat);
                     }
+
                     userAdapter = new UserAdapter(MessageStudentTeacher.this  , mChat );
                     recyclerView.setAdapter(userAdapter);
                 }
+
+
             }
 
             @Override

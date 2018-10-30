@@ -53,7 +53,6 @@ public class ParentChatTeacher extends AppCompatActivity {
 
                 viewHolder.setName(model.getName());
 
-
                 // __ To get ID for Specific user __ !
                 final String user_id = getRef(position).getKey();
 
@@ -81,10 +80,14 @@ public class ParentChatTeacher extends AppCompatActivity {
             super(itemView);
             mView = itemView;
         }
+
+
         public void  setName(String name){
 
             TextView UserName = (TextView) mView.findViewById(R.id.user_single_name);
             UserName.setText(name);
+
+
         }
 
     }

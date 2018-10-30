@@ -42,7 +42,8 @@
         <activity android:name=".TeachersChatStudents" />
         <activity android:name=".MessageTeacherStudent" />
         <activity android:name=".StudentChatTeacher" />
-        <activity android:name=".MessageStudentTeacher"></activity>
+        <activity android:name=".MessageStudentTeacher" />
+        <activity android:name=".listStudentChat"></activity>
     </application>
 
 </manifest>

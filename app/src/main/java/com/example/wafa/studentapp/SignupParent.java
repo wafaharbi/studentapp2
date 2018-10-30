@@ -47,6 +47,7 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
         studentusername = (EditText) findViewById(R.id.editstd) ;
         signup = (Button) findViewById(R.id.btnS);
 
+
         signup.setOnClickListener(this);
         auth= FirebaseAuth.getInstance();
     }
@@ -66,6 +67,8 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
         final String email = studentEmail.getText().toString().trim();
         final String password = studentPassword.getText().toString().trim();
         final String phone = studentPhone.getText().toString().trim();
+        final String img = "default";
+        final  String thumb_img = "default";
 
        // final Parent parent= new Parent(name,email,password,phone ,username);
         //final Student student = new Student(name,email,password,phone ,username);
@@ -157,7 +160,7 @@ public class SignupParent extends AppCompatActivity implements View.OnClickListe
 
                 if(task.isSuccessful()){
 
-                    Parent parent= new Parent(name,email,password,phone ,username);
+                    Parent parent= new Parent(name,email,password,phone ,username , img , thumb_img);
 
                     FirebaseDatabase.getInstance().getReference("Parents").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(parent).addOnCompleteListener(new OnCompleteListener<Void>() {

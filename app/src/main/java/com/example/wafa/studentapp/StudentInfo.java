@@ -130,6 +130,7 @@ public class StudentInfo extends AppCompatActivity {
                     i.putExtra("email", info.getEmail());
                     i.putExtra("phone" ,info.getPhone());
                     i.putExtra("username" , info.getUsername());
+                    i.putExtra("img" , info.getImg());
                     startActivity(i);
                 }
         });
@@ -165,7 +166,7 @@ public  void update(View v){
         auth.signOut();
         Toast.makeText(getApplicationContext(), "Signout successfully" , Toast.LENGTH_SHORT).show();
         finish();
-        Intent i = new Intent(this,LoginStudent.class);
+        Intent i = new Intent(this,LoginStudent.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
 

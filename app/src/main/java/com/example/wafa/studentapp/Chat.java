@@ -2,12 +2,14 @@ package com.example.wafa.studentapp;
 
 public class Chat {
 
-    String sender, reciver , message;
+    String sender, reciver , message ;
+
 
     public Chat(String sender, String reciver, String message) {
        this.sender = sender;
         this.reciver = reciver;
         this.message = message;
+
     }
 
 
@@ -34,6 +36,8 @@ public class Chat {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 
     Chat(){
 

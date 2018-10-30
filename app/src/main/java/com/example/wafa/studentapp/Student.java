@@ -3,14 +3,18 @@ package com.example.wafa.studentapp;
 public class Student {
 
 
-    public String name ,email , password , phone , username;
+    public String name ,email , password , phone , username , img , thumb_img ;
 
-    public Student(String name, String email, String password, String phone ,String username){
-        this.name= name;
+    public Student(String name, String email, String password, String phone ,String username ,String img , String thumb_img ){
+            this.name= name;
         this.email= email;
         this.password= password;
         this.phone= phone;
         this.username=username;
+        this.img=img;
+        this.thumb_img= thumb_img;
+
+
 
     }
 
@@ -76,7 +80,31 @@ public class Student {
         return username;
     }
 
+    public String getImg() {
+        return img;
+    }
 
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getThumb_img() {
+        return thumb_img;
+    }
+
+    public void setThumb_img(String thumb_img) {
+        this.thumb_img = thumb_img;
+    }
+
+    /*
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    */
 }
 
 

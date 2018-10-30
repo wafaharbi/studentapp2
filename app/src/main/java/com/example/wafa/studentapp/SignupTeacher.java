@@ -58,6 +58,8 @@ public class SignupTeacher extends AppCompatActivity implements View.OnClickList
         final String email = studentEmail.getText().toString().trim();
         final String password = studentPassword.getText().toString().trim();
         final String phone = studentPhone.getText().toString().trim();
+        final String img = "default";
+        final  String thumb_img = "default";
 
         if (name.isEmpty()) {
             studentName.setError(" invalid name");
@@ -112,7 +114,7 @@ public class SignupTeacher extends AppCompatActivity implements View.OnClickList
 
                 if (task.isSuccessful()) {
 
-                    User teacher = new User(name, email, password, phone);
+                    User teacher = new User(name, email,phone,password,img, thumb_img);
 
                     FirebaseDatabase.getInstance().getReference("Teachers").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(teacher).addOnCompleteListener(new OnCompleteListener<Void>() {

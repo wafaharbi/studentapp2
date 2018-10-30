@@ -2,9 +2,9 @@ package com.example.wafa.studentapp;
 
 public class Parent {
 
-    public String name,email , password , phone , username , id;
+    public String name,email , password , phone , username ,  img , thumb_img ;;
 
-    public Parent(String name, String email, String password, String phone, String username){
+    public Parent(String name, String email, String password, String phone, String username,String img , String thumb_img ){
 
 
         this.name= name;
@@ -12,6 +12,8 @@ public class Parent {
         this.password= password;
         this.phone= phone;
         this.username=username;
+        this.img=img;
+        this.thumb_img= thumb_img;
     }
 
 
@@ -29,8 +31,21 @@ public class Parent {
     public  Parent(){}
 
 
+    public String getImg() {
+        return img;
+    }
 
+    public void setImg(String img) {
+        this.img = img;
+    }
 
+    public String getThumb_img() {
+        return thumb_img;
+    }
+
+    public void setThumb_img(String thumb_img) {
+        this.thumb_img = thumb_img;
+    }
 
     public String getName() {
         return name;

@@ -78,6 +78,7 @@ FirebaseUser fuser ;
     @Override
     public int getItemViewType(int position) {
         fuser = FirebaseAuth.getInstance().getCurrentUser();
+
         if(mChat.get(position).getSender().equals(fuser.getUid())){
 
             return MSG_TYPE_RIGHT;

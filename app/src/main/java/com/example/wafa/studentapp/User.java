@@ -8,14 +8,15 @@ public class User {
 
 
 
-    public String name,email , password , phone , username, id;
+    public String name,email , password , phone , username  , img , thumb_img ;
 
-    public User(String name,String username, String email, String password, String phone){
+    public User(String name, String email, String password, String phone,String img , String thumb_img ){
         this.name= name;
-        this.username = username;
         this.email= email;
         this.password= password;
         this.phone= phone;
+        this.img=img;
+        this.thumb_img= thumb_img;
     }
 
 
@@ -34,6 +35,9 @@ public class User {
         this.password= password;
         this.phone= phone;
     }
+
+
+
     public User(){
 
     }
@@ -86,7 +90,22 @@ public class User {
         return phone;
     }
 
-/*
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getThumb_img() {
+        return thumb_img;
+    }
+
+    public void setThumb_img(String thumb_img) {
+        this.thumb_img = thumb_img;
+    }
+   /*
     public String getId() {
 
 
